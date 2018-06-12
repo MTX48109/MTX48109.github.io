@@ -29,6 +29,8 @@
     border-top: 4px solid rgb(17, 75, 102);
     margin: 1em 0;
     padding: 0;
+    outline: 0.5px solid rgb(10, 65, 97);
+    box-shadow: 2px;
 }
 
 .hr2 {
@@ -38,24 +40,74 @@
     border-bottom: 4px solid rgb(17, 75, 102);
     margin: 1em 0;
     padding: 0;
+    outline: 0.5px solid rgb(10, 65, 97);
+    box-shadow: 2px;
 }
 
 div {
     text-align: justify;
     text-justify: inter-word;
 }
+.md-tab {
+  /*float: right;*/
+}
+
+
+md-content md-tabs {
+  
+  background-color: rgb(204, 204, 204);
+  box-shadow: 2px;
+  margin-top: 4px;
+
+}
+
+md-content {
+  background-color: transparent;
+  text-align:right;
+
+}
+
+.md-tabs {
+  margin-left:240px;
+  /*float: right;*/
+}
+
+/*md-pagination-wrapper {
+  left: initial;
+  right: 0;
+}*/
+
+md-tabs.md-default-theme md-ink-bar, md-tabs md-ink-bar {
+    color: rgb(16, 71, 153)!important;
+    background-color: rgb(16, 71, 153)!important;
+}
+
   </style>
+  <script>
+  function changePage() {
+    //document.getElementsByTagName('body')[0].style['background'] = 'white'; 
+    document.getElementById('liner').style['display'] = 'none';
+    document.getElementById('logo').style['-webkit-transform'] = 'scale(0.7)';
+    document.getElementById('logo').style['transform'] = 'scale(0.7)';
+    document.getElementById('logo_hold').style['padding'] = '10px 10px 10px 10px';
+    //document.getElementById('tabby').style['width'] = '70%';
+    //document.getElementById('tabby').style['background-color'] = 'white';
+    document.getElementById('science').style['background-color'] = 'rgb(204, 204, 204)';
+    document.getElementsByClassName('md-tabs-canvas').style['margin-left'] = '140px';
+    //document.getElementsByClassName('md-tabs-canvas').style['background-color'] = 'white';
+  }
+  </script>
 </head>
 <body ng-app="BlankApp" ng-cloak>
-  <div style="float:left; padding: 20px 20px 20px 20px;">
-    <a href=".\index.html" style="float:left"><img height="180px" src="img/logo.png" /></a></div>
+  <div id="logo_hold" style="float:left; padding: 20px 20px 20px 20px; margin-top: 12px;">
+    <a href=".\index.html" style="float:left;"><img id="logo" height="180px" src="img/logo.png" /></a></div>
     
     
     
-  <div ng-cloak style="text-align:center;">
+  <div ng-cloak>
   <md-content>
       
-    <md-tabs md-dynamic-height md-border-bottom md-selected="-1" onclick="document.getElementsByTagName('body')[0].style['background'] = 'white'; document.getElementById('liner').style['margin-top'] = '24px';">
+    <md-tabs id="tabby" md-dynamic-height md-border-bottom md-selected="-1" onclick="changePage();">
       <md-tab onclick="news()">
           <md-tab-label>
               <md-icon md-svg-icon="about"></md-icon> About
@@ -66,18 +118,18 @@ div {
                           <md-tab-body class="md-padding">
                               <div id="about" class="corner" style="padding: 20px 20px 20px 20px;">
                                   <div>
-                                    <div class="bio-pic"><img width="200px" src="img/chris.png" /></div>
-                                    <div class="bio">
-                                            <p><b>Dr. Christopher Whitehead</b>, Co-Founder, has close to 20 years of research and development experience in biotechnology and pharmaceutical companies. He has held several research and business development positions at Pfizer and ProNAi Therapeutics. He made pivotal contributions to solving the first crystal structure of MEK and later established a computational model to understand the basis of palbociclib&#39;s selectivity for CDK4 over CDK2.</p></div></div>
-                                    <div>
-                                    <div class="bio-pic"><img width="200px" src="img/judith.png" /></div>
-                                    <div class="bio">
-                                            <p><b>Dr. Judith Sebolt-Leopold</b>, Co-Founder, has 23 years of experience in the pharmaceutical industry. She has held research and senior management positions at Parke-Davis/Pfizer, where she developed a strong track record of advancing oncology drug candidates into the clinic. She pioneered the MEK inhibitor field and reported the first orally active MEK inhibitor, CI-1040, to enter the clinic. She currently co-leads the Developmental Therapeutics Program at University of Michigan&#39;s Comprehensive Cancer Center.</p></div></div>
-                                    <div>
-                                      <div class="bio-pic"><img width="200px" src="img/dave.png" /></div>
-                                      <div class="bio">
-                                            <p><b>David Lowenschuss</b>, Chief Business Officer, has over 20 years of experience working in the pharmaceutical and biotechnology industries. He is a co-founder, funding Board Member and served as Chief Legal Officer of Gemphire Therapeutics Inc. Mr. Lowenschuss also co-founded Michigan Life Ventures, LLC and currently serves as its Chief Legal Manager.  Mr. Lowenschuss served as a Corporate Counsel and later Michigan Legal Site Head at Pfizer. He holds a J.D. from George Washington University.</p></div></div></div>
-                                    
+                                    <div class="bio-pic" style="float:left;"><img width="200px" src="img/chris.png" /></div>
+                                    <div class="bio" style="margin-left:220px; vertical-align:text-bottom;">
+                                            <p><b>Dr. Christopher Whitehead, PhD, MBA,</b> Co-Founder has close to 20 years of research and development experience in biotechnology and pharmaceutical companies. He has held several research and business development positions at Pfizer and ProNAi Therapeutics. He made pivotal contributions to solving the first crystal structure of MEK.</p></div></div>
+                                   <br/><br/><br/><br/><br/><br/> <div>
+                                    <div class="bio-pic" style="float:left;"><img width="200px" src="img/judith.png" /></div>
+                                    <div class="bio" style="margin-left:220px;">
+                                            <p><b>Dr. Judith Sebolt-Leopold, PhD,</b> Co-Founder, has 23 years of experience in the pharmaceutical industry. She has held research and senior management positions at Parke-Davis/Pfizer, where she developed a strong track record of advancing oncology drug candidates into the clinic. She pioneered the MEK inhibitor field and led efforts to introduce the first orally active MEK inhibitor, CI-1040, into clinical trials. She currently co-leads the Developmental Therapeutics Program at University of Michigan's Rogel Cancer Center.</p></div></div>
+                                            <br/><br/><br/><div>
+                                      <div class="bio-pic" style="float:left;"><img width="200px" src="img/dave.png" /></div>
+                                      <div class="bio" style="margin-left:220px;">
+                                            <p><b>David Lowenschuss, JD,</b> Chief Business Officer, has over 20 years of experience working in the pharmaceutical and biotechnology industries. He is a co-founder of Gemphire Therapeutics, Inc., where he is a Board Member and served as Chief Legal Officer. He also co-founded Michigan Life Ventures, LLC and currently serves as its Chief Legal Manager. Mr. Lowenschuss served as a Corporate Counsel and later Michigan Legal Site Head at Pfizer.</p></div></div></div>
+                                    <br/><br/><p>&nbsp;</p>
                           </md-tab-body>
                       </md-tab>
                       <md-tab label="Scientific Advisory Board">
@@ -96,10 +148,11 @@ div {
           <md-tab-label>
               <md-icon md-svg-icon="science"></md-icon> Science
             </md-tab-label>
-        <md-tab-body class="md-padding">
+        <md-tab-body class="md-padding" id="science">
             <div class="corner" id="news" style="padding: 20px 20px 20px 20px;"><p>
-                MTX-211, designed through iterative rounds of synthesis, is a novel small molecule that represents a first in class opportunity to selectively inhibit EGFR and PI3K family members.  It exhibits favorable pharmaceutical properties and the requisite profile for lead compound advancement: molecular weight of 478, clogP 4.69, rule of 5 compliant, facile synthesis (3 steps from readily available starting materials), 78% oral bioavailability, metabolic stability >60 minute half-life in human and mouse microsomes, cmax 10-100x higher than cellular EC90, strong selectivity toward EGFR and PI3K family members, and pharmacodynamic modulation of EGFR and PI3K pathway signaling in vivo and single agent efficacy in clinically relevant KRAS and BRAF mutant patient-derived colorectal (CRC) xenograft models.  By virtue of its dual inhibitory profile against both EGFR and PI3K, MTX-211 is effective against resistance mechanisms to MEK inhibitor monotherapy.  This is evidenced by a 300 to 500% increase in life span seen in KRAS or BRAF mutant CRC PDX-bearing mice co-treated with MTX-211 and a MEK inhibitor compared to single agent control arms.  Promising preclinical data provide critical proof of concept to validate a clinical development path for this agent that targets the KRAS<sup>mt</sup> or BRAF<sup>mt</sup> colorectal cancer patient subpopulations.  Chemical development of MTX-211 has ben initiated to deliver cGMP quality active pharmaceutical ingredient needed for IND-enabing toxicology studies.</p></div>
-               
+                MTX-211, designed through iterative rounds of synthesis, is a novel small molecule that represents a first in class opportunity to selectively inhibit EGFR and PI3K family members.  It exhibits favorable pharmaceutical properties and the requisite profile for lead compound advancement: molecular weight of 478, clogP 4.69, rule of 5 compliant, facile synthesis (3 steps from readily available starting materials), 78% oral bioavailability, metabolic stability >60 minute half-life in human and mouse microsomes, cmax 10-100x higher than cellular EC90, strong selectivity toward EGFR and PI3K family members, and pharmacodynamic modulation of EGFR and PI3K pathway signaling in vivo and single agent efficacy in clinically relevant KRAS and BRAF mutant patient-derived colorectal (CRC) xenograft models.  By virtue of its dual inhibitory profile against both EGFR and PI3K, MTX-211 is effective against resistance mechanisms to MEK inhibitor monotherapy.  This is evidenced by a 300 to 500% increase in life span seen in KRAS or BRAF mutant CRC PDX-bearing mice co-treated with MTX-211 and a MEK inhibitor compared to single agent control arms.  Promising preclinical data provide critical proof of concept to validate a clinical development path for this agent that targets the KRAS<sup>mt</sup> or BRAF<sup>mt</sup> colorectal cancer patient subpopulations.  Chemical development of MTX-211 has ben initiated to deliver cGMP quality active pharmaceutical ingredient needed for IND-enabing toxicology studies.</p>
+                <img src="img/3d.png" /></div>
+              
         </md-tab-body>
       </md-tab>
       <md-tab>
@@ -148,14 +201,16 @@ div {
     </md-tabs>
   </md-content>
 </div>
-<div id="liner" style="width:100%; background-color: rgba(0,90,120,0.2); margin-top:240px">
+<div id="liner" style="width:100%; background-color: rgba(0,90,120,0.2); margin-top:480px">
   <hr class="hr1"/>
 
-<p class="highText" style="color: #09c !important; margin-top:24px;  margin-left: 120px; font-size:24px;">Novel cancer drugs to overcome resistance to targeted therapies</p>
+<p class="highText" style="color: #09c !important; margin-top:24px;  margin-left: 120px; font-size:24px; text-shadow:2px;">Novel cancer drugs to overcome resistance to targeted therapies</p>
+<p style="color: rgb(204, 204, 204); text-align: right; margin-right: 24px; text-shadow:1px;">&copy; 2018, Mekanistic Therapeutics, LLC</p>
 <hr class="hr2" />
 </div>
-<div id="copy" class="copyright" style="position:absolute; bottom:10; margin-left: 48px; font-weight: bold"><p>&copy; 2018, Mekanistic Therapeutics LLC</p></div>
+
   <!--
+    <div id="copy" class="copyright" style="position:absolute; bottom:10; margin-left: 48px; font-weight: bold"><p>&copy; 2018, Mekanistic Therapeutics LLC</p></div>
   Copyright 2016 Google Inc. All Rights Reserved. 
   Use of this source code is governed by an MIT-style license that can be foundin the LICENSE file at http://material.angularjs.org/HEAD/license.
   -->
