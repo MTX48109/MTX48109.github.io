@@ -15,14 +15,14 @@
 <div id="header-logo"><img src="image/cell.png" id="logo" onclick="window.location = '/';"/></div><img id="title" src="image/logo.png" /></div>
 
 <div id="double">
-<div id="top"><div id="search">Search <input type="text" /></div><a href="https://twitter.com/mekanistic?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @mekanistic</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+<div id="topper"><div id="search">Search <input type="text" /></div><a href="https://twitter.com/mekanistic?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @mekanistic</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div><br/>
 <div id="menu">
     <span class="menu-item" onclick="loadContent('mek');">About</span>
 	<span class="menu-item" onclick="loadContent('app/user.htm');">Recent news</span>
     <span class="menu-item" onclick="loadContent('app/user.htm');">Science</span>
 	<span class="menu-item" onclick="loadContent('app/user.htm');">Contact</span></div>
 
-</div></div>
+</div></div></div>
 <div id="header-motto"><img src="image/cells.png"/></div>
 <div id="content">This is where all the content goes</div>
 
@@ -33,6 +33,7 @@
 function loadContent(id) {
 	$("#content").addClass("load");
     $("#content").load(id, function(data, status){
+	$("#content").html(data);
 	setTimeout($("#content").removeClass("load"), 200000); }); }</script>
 
 <style>
@@ -43,17 +44,18 @@ body { margin: 0; background-color:#fcfdff; top: 0; left: 0; overflow-x: hidden;
 #top { position: fixed; width: 100%; top: 0; }
 #strip { width:100%; height: 8px; background-color: #414141;}
 
-#header { top:8px; width:100%; background-color: #3492eb; box-shadow: 2px 2px 2px darkgray; display: flex; justify-content: space-between; align-items: center; transition: 0.4s ease; }
+#header { top:8px; width:100%; background-color: #9ed0ff; box-shadow: 2px 2px 2px darkgray; display: flex; justify-content: space-between; align-items: center; transition: 0.4s ease; }
 
 #header-image { display: inline-block; }
 #header-logo {  margin-right: 12px; background-color:#87c5ff; padding: 8px; display: inline-block; cursor: pointer; }
-#logo { width: 80px; height: 80px; }
+#logo { width: 102px; height: 102px; }
 #title { height: 80px; cursor: pointer; margin: 12px; }
+
 
 #label { width: 40px; height: 32px; }
 #header-motto { width: 100%; z-index: -40;}
 #header-motto img { width: 100%; }
-#top div { display: inline-block; }
+#topper div { display: inline-block; }
 #menu { color: white; }
 .menu-item { padding: 10px; margin: 12px; display: inline; font-size: 18px; }
 .menu-item:hover { color: #aaaaaa; cursor: pointer; }
